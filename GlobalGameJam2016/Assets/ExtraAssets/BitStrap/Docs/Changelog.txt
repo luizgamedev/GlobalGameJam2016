@@ -1,0 +1,6 @@
+# Changelog #
+
+### 1.1 ###
+
+First public version.
+You can follow this documentation link (https://docs.google.com/document/d/1LzsjBetzXnpR-nto8zqYLRxRvjW_DcPP_zOH-stSWVA/pub) for its contents.
