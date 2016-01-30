@@ -16,7 +16,7 @@ public class StoryEndManager : MonoBehaviour {
 
 	void Start () {
 		minimumFlowersForAHappyEnding = 10;
-		int flowerCount = 8;
+		int flowerCount = 11;
 
 //		if (GameManager.Instance) {
 //			flowerCount = GameManager.Instance.GetFlowerCount ();
@@ -32,7 +32,7 @@ public class StoryEndManager : MonoBehaviour {
 		}
 		if ( flowerCount < minimumFlowersForAHappyEnding) {
 			//Bad Ending!!!
-			goddessSpriteRenderer.color = Color.black;
+			//goddessSpriteRenderer.color = Color.black;
 			if (musicSource) {
 
 
@@ -41,7 +41,7 @@ public class StoryEndManager : MonoBehaviour {
 			}
 		} else {
 			//Happy Ending!!!
-			goddessSpriteRenderer.color = Color.cyan;
+			//goddessSpriteRenderer.color = Color.cyan;
 			if (musicSource) {
 
 
