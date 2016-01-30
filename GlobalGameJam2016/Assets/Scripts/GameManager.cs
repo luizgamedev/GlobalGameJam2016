@@ -58,5 +58,11 @@ public class GameManager : Singleton<GameManager> {
 		FlowerCallback.text = flowerCount.ToString ();
 	}
 
+	public void EndTutorial (){
+		myGameMode = GameMode.MainGame;
+		//ChangeMusic?
+		Application.LoadLevel(Application.loadedLevel + 1);
+	}
+
 
 }
