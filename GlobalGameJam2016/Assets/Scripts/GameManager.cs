@@ -58,6 +58,10 @@ public class GameManager : Singleton<GameManager> {
 		FlowerCallback.text = flowerCount.ToString ();
 	}
 
+	public int GetFlowerCount(){
+		return flowerCount;
+	}
+
 	public void EndTutorial (){
 		myGameMode = GameMode.MainGame;
 		//ChangeMusic?
