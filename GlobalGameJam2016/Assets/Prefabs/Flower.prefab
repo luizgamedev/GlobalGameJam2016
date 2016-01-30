@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 459398}
   - 212: {fileID: 21229778}
+  - 61: {fileID: 6114624}
+  - 95: {fileID: 9555164}
+  - 114: {fileID: 11455230}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -23,11 +26,59 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.3391473, y: -1.4427862, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6114624
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151028}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+--- !u!95 &9555164
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d59920d78b23c84bb8704745b01d26a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11455230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0757b779262dbf0479b09efc8009d340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 184178, guid: a827375e47a7b5a4b910a90f53d94df9, type: 2}
+  spriteList:
+  - {fileID: 21300000, guid: 8b4c477457cfb3f42a6fc8858c9b6af9, type: 3}
+  - {fileID: 21300000, guid: 21a42507fba1e264ebd8f55d765de4df, type: 3}
+  - {fileID: 21300000, guid: e17077fcbb5f3cc419e59d05f4c2dad3, type: 3}
+  - {fileID: 21300000, guid: 09ff058fbe025e742a2972e3aa68ac12, type: 3}
 --- !u!212 &21229778
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -54,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 8a7c892013f3102438871a1562af51a0, type: 3}
   m_Color: {r: 0.9044118, g: 0.026600372, b: 0.026600372, a: 1}
   m_FlipX: 0
   m_FlipY: 0
