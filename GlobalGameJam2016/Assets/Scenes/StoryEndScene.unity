@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumFlowersForAHappyEnding: 0
   goddessSpriteRenderer: {fileID: 920436698}
+  goodEndingSong: {fileID: 8300000, guid: 024dbc05ffdfacb41a70d099ffadbb76, type: 3}
+  badEndingSong: {fileID: 8300000, guid: df10d7d97b779bb4b8e62ac6be7a0b57, type: 3}
 --- !u!4 &408825943
 Transform:
   m_ObjectHideFlags: 0
