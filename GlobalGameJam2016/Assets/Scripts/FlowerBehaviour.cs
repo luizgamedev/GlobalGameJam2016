@@ -8,11 +8,13 @@ public class FlowerBehaviour : MonoBehaviour {
 
 	SpriteRenderer myRenderer;
 	BoxCollider2D myCollider;
+	AudioSource myAudio;
 
 	// Use this for initialization
 	void Start () {
 		myRenderer = GetComponentInChildren<SpriteRenderer> ();
 		myCollider = GetComponent<BoxCollider2D> ();
+		myAudio = GetComponent<AudioSource> ();
 
 		if(spriteList.GetLength(0) > 0){
 			
@@ -35,11 +37,14 @@ public class FlowerBehaviour : MonoBehaviour {
 			if (GameManager.Instance) {
 				GameManager.Instance.AddFlowerCount ();
 			}
+			myAudio.Play ();
+			myAudio.loop = false;
 			GameObject particle = Instantiate (particlePrefab, transform.position, Quaternion.identity) as GameObject;
 			GameObject.Destroy (particle, 1f);
 			enabled = false;
 			myRenderer.enabled = false;
 			myCollider.enabled = false;
+
 		}
 	}
 
