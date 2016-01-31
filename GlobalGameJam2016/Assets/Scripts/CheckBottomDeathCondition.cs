@@ -19,9 +19,7 @@ public class CheckBottomDeathCondition : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if (coll.gameObject.tag == "Player") {
-			//CallbackText.text = "Dead!";
-			coll.gameObject.SetActive (false);
-			//Camera.main.gameObject.SetActive (false);
+			coll.gameObject.GetComponent<PlayerBehaviour> ().Die ();
 		}
 	}
 }

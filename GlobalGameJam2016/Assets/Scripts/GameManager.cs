@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager> {
 	//////////////////////////////////////////////
 	public AudioClip tutorialSong;
 	public Text FlowerCallback;
+	public Image GameOverImage;
 	//////////////////////////////////////////////
 
 	//////////////////////////////////////////////
@@ -24,6 +25,8 @@ public class GameManager : Singleton<GameManager> {
 	//////////////////////////////////////////////
 
 	int flowerCount = 0;
+	bool hasTutorialStarted = false;
+	bool hasGameStarted = false;
 
 	// Use this for initialization
 	void Start () {
@@ -50,12 +53,17 @@ public class GameManager : Singleton<GameManager> {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(myGameMode == GameMode.MainGame && !hasGameStarted && Input.anyKeyDown){
+			GameEventManager.TriggerGameStart ();
+			hasGameStarted = true;
+			GameOverImage.enabled = false;
+		}
 	}
 
 	public void AddFlowerCount(){
 		flowerCount++;
-		FlowerCallback.text = flowerCount.ToString ();
+		//FlowerCallback.text = flowerCount.ToString ();
+		LeiImageManager.Instance.AddFlowers();
 	}
 
 	public int GetFlowerCount(){
@@ -66,6 +74,15 @@ public class GameManager : Singleton<GameManager> {
 		myGameMode = GameMode.MainGame;
 		//ChangeMusic?
 		Application.LoadLevel(Application.loadedLevel + 1);
+
+		GameEventManager.TriggerGamePause ();
+	}
+
+	public void PrepareRestart(){
+		hasGameStarted = false;
+		GameOverImage.enabled = true;
+		LeiImageManager.Instance.ResetFlowers();
+		flowerCount = 1;
 	}
 
 

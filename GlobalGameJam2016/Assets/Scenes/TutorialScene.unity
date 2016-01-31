@@ -328,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialSong: {fileID: 8300000, guid: a664c76ca06ae4f4892c7a59870ba46e, type: 3}
   FlowerCallback: {fileID: 874390883}
+  GameOverImage: {fileID: 902320616}
 --- !u!1 &475105257
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +884,73 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 874390881}
+--- !u!1 &902320614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 902320615}
+  - 222: {fileID: 902320617}
+  - 114: {fileID: 902320616}
+  m_Layer: 5
+  m_Name: GameOverScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &902320615
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902320614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1548562963}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0.29580712, y: 0.27025732}
+  m_AnchorMax: {x: 0.70326906, y: 0.7345147}
+  m_AnchoredPosition: {x: 0.36600113, y: -0.8100281}
+  m_SizeDelta: {x: 0, y: -2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &902320616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902320614}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: b26976e997073474085e44297a20431a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &902320617
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902320614}
 --- !u!1 &921185979
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,8 +1047,9 @@ GameObject:
   - 224: {fileID: 1148685580}
   - 222: {fileID: 1148685582}
   - 114: {fileID: 1148685581}
+  - 114: {fileID: 1148685583}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,6 +1105,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148685579}
+--- !u!114 &1148685583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148685579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799c3c7ae414b314a89206843febd89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeiSprites:
+  - {fileID: 21300000, guid: e0ef2e3890bc121478a1d93322f6d1c8, type: 3}
+  - {fileID: 21300000, guid: b6e1d46ce21ce194ba8384e2c11d7715, type: 3}
+  - {fileID: 21300000, guid: 4d12eef5a876536409d2dcaddf7b6725, type: 3}
+  - {fileID: 21300000, guid: c0cb5939aa9fe084393753d62fa57f9f, type: 3}
+  - {fileID: 21300000, guid: 4d412fcf59a0be745a77839c521e2f1b, type: 3}
+  - {fileID: 21300000, guid: ac154385d3dae7140b9430cb558252a9, type: 3}
+  - {fileID: 21300000, guid: 1dff51675dc7d8642b1206258abde978, type: 3}
+  - {fileID: 21300000, guid: afcc1e0704235dd4487ea6f0f713e660, type: 3}
+  - {fileID: 21300000, guid: 1b9414d64a2ccf54cb59b09fdb625ff6, type: 3}
+  - {fileID: 21300000, guid: 02430356ff037bc41bc9b5c4995dd479, type: 3}
+  - {fileID: 21300000, guid: 0bb44f092ad4054439d63efceb2e6626, type: 3}
+  - {fileID: 21300000, guid: 1a8b6e4371b4dc947952c507cb84f016, type: 3}
+  - {fileID: 21300000, guid: 00a0c5eb24295dc44b9e476965da48e1, type: 3}
+  - {fileID: 21300000, guid: 65cc98c9bdd011c42a3b88d1f054b6d6, type: 3}
+  - {fileID: 21300000, guid: ec662f763a4c02843be8260ad823094f, type: 3}
 --- !u!1 &1162501542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,6 +1479,7 @@ RectTransform:
   m_Children:
   - {fileID: 874390882}
   - {fileID: 1148685580}
+  - {fileID: 902320615}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
