@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	Vector3 startposition;
 	Rigidbody2D myRigidBody;
 	SpriteRenderer myRenderer;
+	AudioSource myAudio;
 
 
 	// Use this for initialization
@@ -19,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		myRenderer.enabled = false;
 		myRigidBody.isKinematic = true;
 		enabled = false;
+		myAudio = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -46,6 +48,9 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	public void Die(){
+		if (myAudio) {
+			myAudio.Play ();
+		}
 		GameEventManager.TriggerGameOver();
 		GameManager.Instance.PrepareRestart ();
 	}

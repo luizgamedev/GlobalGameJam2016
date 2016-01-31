@@ -28,4 +28,12 @@ public class LeiImageManager : Singleton<LeiImageManager> {
 		leiCanvas.sprite = LeiSprites [0];
 	}
 
+	public void HideLei(){
+		leiCanvas.enabled = false;
+	}
+
+	public void ShowLei(){
+		leiCanvas.enabled = true;
+	}
+
 }

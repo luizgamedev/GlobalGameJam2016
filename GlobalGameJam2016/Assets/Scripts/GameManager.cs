@@ -85,5 +85,13 @@ public class GameManager : Singleton<GameManager> {
 		flowerCount = 1;
 	}
 
+	public void HideUI(){
+		LeiImageManager.Instance.HideLei ();
+	}
+
+	public void ShowUI(){
+		LeiImageManager.Instance.ShowLei ();
+	}
+
 
 }

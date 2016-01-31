@@ -5,7 +5,8 @@ using UnityEngine.Audio;
 public class StoryEndManager : MonoBehaviour {
 
 	public int minimumFlowersForAHappyEnding;
-	public SpriteRenderer goddessSpriteRenderer;
+	public GameObject goodEndingPrefab;
+	public GameObject baddEndingPrefab;
 
 	//////////////////////////////////////////////
 	public AudioClip goodEndingSong;
@@ -16,14 +17,14 @@ public class StoryEndManager : MonoBehaviour {
 
 	void Start () {
 		minimumFlowersForAHappyEnding = 10;
-		int flowerCount = 11;
+		int flowerCount = 0;
 
-//		if (GameManager.Instance) {
-//			flowerCount = GameManager.Instance.GetFlowerCount ();
-//		} else {
-//			Debug.Log ("StoryEndManager -- No Manager!");
-//			return;
-//		}
+		if (GameManager.Instance) {
+			flowerCount = GameManager.Instance.GetFlowerCount ();
+		} else {
+			Debug.Log ("StoryEndManager -- No Manager!");
+			return;
+		}
 
 		musicSource = GameObject.FindGameObjectWithTag("Music");
 		AudioSource audioSource = musicSource.GetComponent<AudioSource> ();
@@ -32,21 +33,19 @@ public class StoryEndManager : MonoBehaviour {
 		}
 		if ( flowerCount < minimumFlowersForAHappyEnding) {
 			//Bad Ending!!!
-			//goddessSpriteRenderer.color = Color.black;
+			GameObject.Instantiate(baddEndingPrefab);
 			if (musicSource) {
-
-
 				audioSource.clip = badEndingSong;
-				audioSource.Play ();			
+				audioSource.Play ();
+				audioSource.loop = false;
 			}
 		} else {
 			//Happy Ending!!!
-			//goddessSpriteRenderer.color = Color.cyan;
+			GameObject.Instantiate(goodEndingPrefab);
 			if (musicSource) {
-
-
 				audioSource.clip = goodEndingSong;
 				audioSource.Play ();			
+				audioSource.loop = false;
 			}
 		}
 
