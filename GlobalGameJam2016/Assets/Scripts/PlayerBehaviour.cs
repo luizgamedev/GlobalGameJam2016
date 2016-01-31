@@ -47,10 +47,11 @@ public class PlayerBehaviour : MonoBehaviour {
 		enabled = false;
 	}
 
-	public void Die(){
+	public void Die(GameManager.DeathType deathType){
 		if (myAudio) {
 			myAudio.Play ();
 		}
+		GameManager.Instance.SetGameOverScreen (deathType);
 		GameEventManager.TriggerGameOver();
 		GameManager.Instance.PrepareRestart ();
 	}

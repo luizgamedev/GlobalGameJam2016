@@ -13,11 +13,21 @@ public class GameManager : Singleton<GameManager> {
 		MainGame
 	}
 
+	public enum DeathType
+	{
+		Lava = 0,
+		NightWatcher
+	}
+
 	//////////////////////////////////////////////
 	public AudioClip tutorialSong;
 	public Text FlowerCallback;
 	public Image GameOverImage;
 	//////////////////////////////////////////////
+
+	public Sprite lavaDeathSprite;
+	public Sprite nightwatcherDeathSprite;
+	DeathType deathType;
 
 	//////////////////////////////////////////////
 	GameMode myGameMode = GameMode.Tutorial;
@@ -57,6 +67,8 @@ public class GameManager : Singleton<GameManager> {
 			GameEventManager.TriggerGameStart ();
 			hasGameStarted = true;
 			GameOverImage.enabled = false;
+			Camera.main.gameObject.transform.FindChild ("ShadeObj").GetComponent<SpriteRenderer> ().color = new Color(0f,0f,0f,0f);
+			LeiImageManager.Instance.ShowLei ();
 		}
 	}
 
@@ -81,6 +93,8 @@ public class GameManager : Singleton<GameManager> {
 	public void PrepareRestart(){
 		hasGameStarted = false;
 		GameOverImage.enabled = true;
+		LeiImageManager.Instance.HideLei ();
+		Camera.main.gameObject.transform.FindChild ("ShadeObj").GetComponent<SpriteRenderer> ().color = new Color(0f,0f,0f,1f);
 		LeiImageManager.Instance.ResetFlowers();
 		flowerCount = 1;
 	}
@@ -91,6 +105,20 @@ public class GameManager : Singleton<GameManager> {
 
 	public void ShowUI(){
 		LeiImageManager.Instance.ShowLei ();
+	}
+
+	public void SetGameOverScreen(DeathType deathtype){
+		switch(deathtype){
+		case DeathType.NightWatcher:
+			GameOverImage.sprite = nightwatcherDeathSprite;
+			break;
+		case DeathType.Lava:
+			GameOverImage.sprite = lavaDeathSprite;
+			break;
+			
+		}
+
+		this.deathType = deathtype;
 	}
 
 

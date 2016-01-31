@@ -86,7 +86,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D coll){
 		if(coll.tag == "Player" && !Input.GetKey(KeyCode.LeftControl)){
 			PlayerBehaviour playerBehaviour = coll.GetComponent<PlayerBehaviour> ();
-			playerBehaviour.Die ();
+			playerBehaviour.Die (GameManager.DeathType.NightWatcher);
 		}
 	}
 }

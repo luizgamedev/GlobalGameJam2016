@@ -9,6 +9,8 @@ public class BottomUpCameraMovement : MonoBehaviour {
 	Vector3 startposition;
 	bool blockMove;
 
+	OclusionAnimation oclusionAnimation;
+
 	// Use this for initialization
 	void Start () {
 		UpSpeed = 0.5f;
@@ -18,6 +20,7 @@ public class BottomUpCameraMovement : MonoBehaviour {
 		GameEventManager.GameStart += GameStart;
 		GameEventManager.GameOver += GameOver;
 		GameEventManager.GamePause += GamePause;
+		oclusionAnimation = GetComponentInChildren<OclusionAnimation> ();
 	}
 	
 	// Update is called once per frame
@@ -30,13 +33,16 @@ public class BottomUpCameraMovement : MonoBehaviour {
 	void GameStart(){
 		transform.localPosition = startposition;
 		blockMove = false;
+		oclusionAnimation.StartOclusion ();
 	}
 
 	void GameOver(){
 		blockMove = true;
+		oclusionAnimation.StopOclusion ();
 	}
 
 	void GamePause(){
 		blockMove = true;
+		oclusionAnimation.StopOclusion ();
 	}
 }

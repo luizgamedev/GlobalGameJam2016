@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 74d0d3b712f46bb448ca1bd1fe1ec9b9
+timeCreated: 1454189951
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Big Villager Sheet_0
+    21300002: Big Villager Sheet_1
+    21300004: Big Villager Sheet_2
+    21300006: Big Villager Sheet_4
+    21300008: Big Villager Sheet_5
+    21300010: Big Villager Sheet_7
+    21300012: Big Villager Sheet_8
+    21300014: Big Villager Sheet_9
+    21300016: Big Villager Sheet_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Big Villager Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 673
+        width: 94
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 699
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 470
+        width: 273
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 264
+        width: 149
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 432
+        width: 126
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 232
+        width: 140
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 271
+        width: 216
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 22
+        width: 104
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Big Villager Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 12
+        width: 88
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

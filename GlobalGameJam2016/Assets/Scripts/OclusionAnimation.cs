@@ -9,6 +9,8 @@ public class OclusionAnimation : MonoBehaviour {
 	public float FadeSpeed;
 	public float FadeOutSpeed;
 
+	bool stopOclusion;
+
 	// Use this for initialization
 	void Start () {
 		opaqueBlack = Color.black;
@@ -17,14 +19,25 @@ public class OclusionAnimation : MonoBehaviour {
 		myRenderer = GetComponent<SpriteRenderer> ();
 		FadeSpeed = 0.01f;
 		FadeOutSpeed = 0.02f;
+		stopOclusion = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.RightControl)) {
-			myRenderer.color = Color.Lerp (myRenderer.color, opaqueBlack, FadeSpeed);
-		} else {
-			myRenderer.color = Color.Lerp (myRenderer.color, transparentBlack, FadeOutSpeed);
+		if (!stopOclusion) {
+			if (Input.GetKey (KeyCode.LeftControl)) {
+				myRenderer.color = Color.Lerp (myRenderer.color, opaqueBlack, FadeSpeed);
+			} else {
+				myRenderer.color = Color.Lerp (myRenderer.color, transparentBlack, FadeOutSpeed);
+			}
 		}
+	}
+
+	public void StartOclusion(){
+		stopOclusion = false;
+	}
+
+	public void StopOclusion(){
+		stopOclusion = true;
 	}
 }

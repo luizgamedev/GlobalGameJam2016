@@ -19,7 +19,7 @@ public class CheckBottomDeathCondition : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if (coll.gameObject.tag == "Player") {
-			coll.gameObject.GetComponent<PlayerBehaviour> ().Die ();
+			coll.gameObject.GetComponent<PlayerBehaviour> ().Die (GameManager.DeathType.Lava);
 		}
 	}
 }
