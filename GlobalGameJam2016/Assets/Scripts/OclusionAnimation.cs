@@ -6,8 +6,8 @@ public class OclusionAnimation : MonoBehaviour {
 	Color opaqueBlack;
 	Color transparentBlack;
 	SpriteRenderer myRenderer;
-	float FadeSpeed;
-	float FadeOutSpeed;
+	public float FadeSpeed;
+	public float FadeOutSpeed;
 
 	// Use this for initialization
 	void Start () {
