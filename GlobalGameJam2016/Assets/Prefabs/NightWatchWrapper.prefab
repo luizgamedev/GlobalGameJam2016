@@ -342,8 +342,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 422336}
   - 114: {fileID: 11452532}
-  - 68: {fileID: 6889954}
   - 50: {fileID: 5046272}
+  - 60: {fileID: 6074832}
   m_Layer: 0
   m_Name: NightWatchWrapper
   m_TagString: Untagged
@@ -407,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.108, y: 3.056, z: 0}
+  m_LocalPosition: {x: -9.108, y: 2.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489076}
@@ -653,8 +653,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &6889954
-EdgeCollider2D:
+--- !u!60 &6074832
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -662,12 +662,16 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: 0.9114542, y: 2.29331}
-  - {x: 3.461646, y: 1.7545898}
+    m_Paths:
+    - - {x: 0.9681921, y: 2.3685029}
+      - {x: 3.9021811, y: 2.924999}
+      - {x: 3.4458141, y: 0.6991291}
+      - {x: 2.2423158, y: 1.4718215}
+      - {x: 1.6556153, y: 1.8637111}
 --- !u!95 &9578782
 Animator:
   serializedVersion: 3

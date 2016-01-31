@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	public float eyePulsingTimer = 0.5f;
 	public float pulsingSpeed = 1f;
 
-	EdgeCollider2D eyeSightCollider;
+	PolygonCollider2D eyeSightCollider;
 	bool isGoingRight = true;
 	PlatformerCharacter2D platformerController;
 	Vector3 rightRef;
@@ -26,7 +26,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		eyeSightCollider = GetComponent<EdgeCollider2D> ();
+		eyeSightCollider = GetComponent<PolygonCollider2D> ();
 		eyeSightCollider.enabled = false;
 		eyeSight.SetActive (false);
 		//platformerController = GetComponent<PlatformerCharacter2D> ();
@@ -81,5 +81,12 @@ public class EnemyBehaviour : MonoBehaviour {
 	void FinishLoadingTheEye(){
 		eyeSightCollider.enabled = true;
 		pulseSight = false;
+	}
+
+	void OnTriggerStay2D(Collider2D coll){
+		if(coll.tag == "Player" && !Input.GetKey(KeyCode.LeftControl)){
+			PlayerBehaviour playerBehaviour = coll.GetComponent<PlayerBehaviour> ();
+			playerBehaviour.Die ();
+		}
 	}
 }
