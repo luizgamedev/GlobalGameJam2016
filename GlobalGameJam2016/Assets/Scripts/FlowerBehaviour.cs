@@ -7,16 +7,22 @@ public class FlowerBehaviour : MonoBehaviour {
 	public Sprite[] spriteList;
 
 	SpriteRenderer myRenderer;
+	BoxCollider2D myCollider;
 
 	// Use this for initialization
 	void Start () {
 		myRenderer = GetComponentInChildren<SpriteRenderer> ();
+		myCollider = GetComponent<BoxCollider2D> ();
 
 		if(spriteList.GetLength(0) > 0){
 			
 			myRenderer.sprite = spriteList[Random.Range(0, spriteList.GetLength(0) - 1)];
 
 		}
+
+		GameEventManager.GameStart += GameStart;
+		GameEventManager.GameOver += GameOver;
+		GameEventManager.GamePause += GamePause;
 	}
 	
 	// Update is called once per frame
@@ -30,8 +36,28 @@ public class FlowerBehaviour : MonoBehaviour {
 				GameManager.Instance.AddFlowerCount ();
 			}
 			GameObject particle = Instantiate (particlePrefab, transform.position, Quaternion.identity) as GameObject;
-			GameObject.Destroy (gameObject, 0.1f);
 			GameObject.Destroy (particle, 1f);
+			enabled = false;
+			myRenderer.enabled = false;
+			myCollider.enabled = false;
 		}
+	}
+
+	void GameStart(){
+		myRenderer.enabled = true;
+		enabled = true;
+		myCollider.enabled = true;
+	}
+
+	void GameOver(){
+		myRenderer.enabled = false;
+		enabled = false;
+		myCollider.enabled = false;
+	}
+
+	void GamePause(){
+		myRenderer.enabled = false;
+		enabled = false;
+		myCollider.enabled = false;
 	}
 }
