@@ -40,6 +40,6 @@ public class LavaRandomAnimation : MonoBehaviour {
 //			actualVelocity = -actualVelocity;
 //		}
 
-		transform.Translate (new Vector3 ( (actualVelocity * Time.deltaTime), 0.01f*Mathf.Sin(15f*index), 0f  ));
+		transform.Translate (new Vector3 ( (actualVelocity * Time.deltaTime), 0.001f*Mathf.Sin(10f*index), 0f  ));
 	}
 }

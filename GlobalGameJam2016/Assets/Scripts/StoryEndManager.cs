@@ -16,7 +16,7 @@ public class StoryEndManager : MonoBehaviour {
 	GameObject musicSource;
 
 	void Start () {
-		minimumFlowersForAHappyEnding = 10;
+		minimumFlowersForAHappyEnding = 8;
 		int flowerCount = 0;
 
 		if (GameManager.Instance) {
